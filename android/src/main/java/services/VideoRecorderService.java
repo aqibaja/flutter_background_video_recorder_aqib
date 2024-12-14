@@ -307,7 +307,7 @@ public class VideoRecorderService extends Service {
         mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
         mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
         mMediaRecorder.setOutputFile(mVideoFileName);
-        mMediaRecorder.setVideoEncodingBitRate(10000000);
+        mMediaRecorder.setVideoEncodingBitRate(1000000);
         mMediaRecorder.setVideoFrameRate(30);
         mMediaRecorder.setVideoSize(mVideoSize.getWidth(), mVideoSize.getHeight());
         mMediaRecorder.setVideoEncoder(MediaRecorder.VideoEncoder.H264);
@@ -367,9 +367,9 @@ public class VideoRecorderService extends Service {
     private static Size chooseOptimalSize(Size[] choices) {
         List<Size> sizes = new ArrayList<>();
         for (Size option: choices) {
-            if (option.getHeight() == option.getWidth() * 1080 / 1920
-                    && option.getWidth() >= 1920
-                    && option.getHeight() >= 1080) {
+            if (option.getHeight() == option.getWidth() * 360 / 640
+                    && option.getWidth() >= 640
+                    && option.getHeight() >= 360) {
                 sizes.add(option);
             }
         }
