@@ -367,9 +367,9 @@ public class VideoRecorderService extends Service {
     private static Size chooseOptimalSize(Size[] choices) {
         List<Size> sizes = new ArrayList<>();
         for (Size option: choices) {
-            if (option.getHeight() == option.getWidth() * 360 / 640
-                    && option.getWidth() >= 640
-                    && option.getHeight() >= 360) {
+            if (option.getHeight() == option.getWidth() * 480 / 640
+                && option.getWidth() >= 640
+                && option.getHeight() >= 480) {
                 sizes.add(option);
             }
         }
